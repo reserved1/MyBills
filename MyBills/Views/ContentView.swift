@@ -38,7 +38,14 @@ struct ContentView: View {
                 }
             }
         }
-        .sheet(item: $enumModel) { $0 }
+        .sheet(item: $enumModel) {
+            switch $0 {
+            case .new:
+                BillFormView(bformVM: BillFormVM())
+            case .update(let bill):
+                BillFormView(bformVM: BillFormVM(bill))
+            }
+        }
     }
 }
 

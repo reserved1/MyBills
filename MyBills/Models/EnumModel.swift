@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum OptionTypes: Identifiable, View {
+enum OptionTypes: Identifiable {
     case new
     case update(Bill)
     var id: String {
@@ -16,14 +16,6 @@ enum OptionTypes: Identifiable, View {
             return "new"
         case .update:
             return "update"
-        }
-    }
-    var body: some View {
-        switch self {
-        case .new:
-            return BillFormView(bformVM: BillFormVM())
-        case .update(let bill):
-            return BillFormView(bformVM: BillFormVM(bill))
         }
     }
 }
