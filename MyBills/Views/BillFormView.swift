@@ -11,23 +11,41 @@ struct BillFormView: View {
     @EnvironmentObject var billVM: BillVM
     @ObservedObject var bformVM: BillFormVM
     @Environment(\.presentationMode) var presentationMode
+    @State private var rotation: Double = 0
+
     var body: some View {
         NavigationView {
             Form {
-                VStack(alignment: .leading) {
-                    TextField("Nome da Conta", text: $bformVM.billDescription)
-                    TextField("Código de Barra", text: $bformVM.barCode)
-                    TextField("Valor", value: $bformVM.value, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                        .padding()
-                    Toggle(bformVM.status ? "Pago" : "Não Pago", isOn: $bformVM.status)
+                VStack(alignment: .center) {
+                    Section(header: Text("Nome da Conta:").bold().position(x: 61, y: 15)) {
+                        TextField("Nome da Conta", text: $bformVM.billDescription).font(.subheadline)
+                    }
+                    .textFieldStyle(.automatic)
+                    Divider()
+                    Section(header: Text("Código de Barras:").bold().position(x: 68, y: 15)) {
+                        TextField("Código de Barra", text: $bformVM.barCode).font(.subheadline)
+                            .textFieldStyle(.automatic)
+                    }
+                    Divider()
+                    Section(header: Text("Valor:").bold().position(x: 19, y: 15)) {
+                        TextField("", value: $bformVM.value, formatter: NumberFormatter()).font(.subheadline)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(.automatic)
+                    }
+                    Divider()
+                    Section(header: Text("Pagamento:").bold().position(x: 45, y: 15)) {
+                        Toggle(bformVM.status ? "Pago" : "Não Pago", isOn: $bformVM.status)
+                    }
                 }
+                .padding()
+                .foregroundColor(Color("Principal"))
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Contas")
+                        .bold()
                         .font(.largeTitle)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("Principal"))
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     cancelButton

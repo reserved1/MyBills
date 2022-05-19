@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Bill: Identifiable, Codable {
+struct Bill: Identifiable, Codable, Hashable {
     var id: String = UUID().uuidString
     var barCode: String
     var billDescription: String

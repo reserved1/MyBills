@@ -10,41 +10,71 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var billVM: BillVM
     @State private var enumModel: OptionTypes?
+    @State var searchText: String = ""
     var body: some View {
-        NavigationView {
-            List {
-                ForEach($billVM.bills) { $bill in
-                    Button {
-                        enumModel = .update(bill)
-                    } label: {
-                        LabelItem(status: $bill.status, description: $bill.billDescription)
+            NavigationView {
+                List {
+                    ForEach(filteredBills, id: \.self) { bill in
+                                Button {
+                                    enumModel = .update(bill)
+                                } label: {
+                                    HStack(alignment: .center) {
+                                        Spacer()
+                                            VStack(alignment: .center) {
+                                                    Text(bill.billDescription)
+                                                        .bold()
+                                                        .font(.title2)
+                                                        .foregroundColor(Color("Principal"))
+                                                        .frame(alignment: .center)
+                                                    Text(bill.status ? "Pago" : "Não Pago")
+                                                        .font(.subheadline)
+                                                        .frame(alignment: .leading)
+                                                        .foregroundColor(Color("Principal"))
+                                            }
+                                        Spacer()
+                                        }
+                                }
+                                .tint(Color("Principal"))
+                    }
+                    .onDelete(perform: billVM.deleteBill)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                            Text("Contas")
+                                .font(.largeTitle)
+                                .bold()
+                                .foregroundColor(Color("Principal"))
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            enumModel = .new
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                        }
                     }
                 }
-                .onDelete(perform: billVM.deleteBill )
-            }
-            .listStyle(InsetGroupedListStyle())
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Contas")
-                        .font(.largeTitle)
-                        .foregroundColor(.black)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        enumModel = .new
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                    }
-                }
-            }
         }
-        .sheet(item: $enumModel) {
-            switch $0 {
-            case .new:
-                BillFormView(bformVM: BillFormVM())
-            case .update(let bill):
-                BillFormView(bformVM: BillFormVM(bill))
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .sheet(item: $enumModel) {
+                switch $0 {
+                case .new:
+                    BillFormView(bformVM: BillFormVM())
+                case .update(let bill):
+                    BillFormView(bformVM: BillFormVM(bill))
+                }
             }
+    }
+    var filteredBills: [Bill] {
+        if searchText.lowercased() == ".ispaid" {
+            return billVM.bills.filter { $0.status == true }
+        }
+        if searchText.lowercased() == ".nopaid" {
+            return billVM.bills.filter { $0.status == false }
+        }
+        if searchText.isEmpty {
+            return billVM.bills
+        } else {
+            return billVM.bills.filter { $0.billDescription.lowercased().contains(searchText.lowercased()) }
         }
     }
 }

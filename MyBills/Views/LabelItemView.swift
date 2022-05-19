@@ -9,18 +9,26 @@ import Foundation
 import SwiftUI
 
 struct LabelItem: View {
+    @Binding var bill: Bill
     @Binding var status: Bool
     @Binding var description: String
     var body: some View {
-        HStack {
-            Circle()
-                .strokeBorder(Color.white, lineWidth: 2)
-                .background(Circle().foregroundColor(status ? .green : .red))
-                .frame(width: 40, height: 40)
-                .shadow(radius: 7)
-            Text(description)
-                .font(.title3)
-                .strikethrough(status)
+        ZStack {
+            RoundedRectangle(cornerRadius: 30)
+                .frame(width: 300, height: 50, alignment: .center)
+            HStack {
+                VStack(alignment: .center) {
+                    Group {
+                        Text(description)
+                            .bold()
+                            .font(.title)
+                        Text(status ? "Pago" : "Não Pago")
+                            .font(.subheadline)
+                    }
+                    .foregroundColor(Color("Principal"))
+                }
+            }
         }
+//        .accentColor(.white.opacity(0.01))
     }
 }

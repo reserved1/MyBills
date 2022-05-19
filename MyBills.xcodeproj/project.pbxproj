@@ -21,6 +21,7 @@
 		EE0A6CF92832895300467364 /* BillFormVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CF82832895300467364 /* BillFormVM.swift */; };
 		EE0A6CFB283289E800467364 /* BillFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CFA283289E800467364 /* BillFormView.swift */; };
 		EE0A6CFE2832BEA400467364 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CFD2832BEA400467364 /* EnumModel.swift */; };
+		EE0A6D00283533E600467364 /* BillCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CFF283533E600467364 /* BillCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		EE0A6CF82832895300467364 /* BillFormVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillFormVM.swift; sourceTree = "<group>"; };
 		EE0A6CFA283289E800467364 /* BillFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillFormView.swift; sourceTree = "<group>"; };
 		EE0A6CFD2832BEA400467364 /* EnumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
+		EE0A6CFF283533E600467364 /* BillCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				EE0A6CC028326A2200467364 /* ContentView.swift */,
 				EE0A6CF62832815500467364 /* LabelItemView.swift */,
 				EE0A6CFA283289E800467364 /* BillFormView.swift */,
+				EE0A6CFF283533E600467364 /* BillCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				EE0A6CBF28326A2200467364 /* MyBillsApp.swift in Sources */,
 				EE0A6CFE2832BEA400467364 /* EnumModel.swift in Sources */,
 				EE0A6CF72832815500467364 /* LabelItemView.swift in Sources */,
+				EE0A6D00283533E600467364 /* BillCardView.swift in Sources */,
 				EE0A6CEF28326CD500467364 /* BillVM.swift in Sources */,
 				EE0A6CFB283289E800467364 /* BillFormView.swift in Sources */,
 			);
