@@ -25,19 +25,20 @@ struct ContentView: View {
                                                         .bold()
                                                         .font(.title2)
                                                         .foregroundColor(Color("Principal"))
-                                                        .frame(alignment: .center)
                                                     Text(bill.status ? "Pago" : "Não Pago")
                                                         .font(.subheadline)
-                                                        .frame(alignment: .leading)
                                                         .foregroundColor(Color("Principal"))
                                             }
                                         Spacer()
                                         }
+                                    .frame(height: 60)
                                 }
                                 .tint(Color("Principal"))
                     }
                     .onDelete(perform: billVM.deleteBill)
                 }
+                .listStyle(.insetGrouped)
+                .environment(\.defaultMinListRowHeight, 20)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                             Text("Contas")

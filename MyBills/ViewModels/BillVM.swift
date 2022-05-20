@@ -27,36 +27,9 @@ class BillVM: ObservableObject {
         saveBills()
     }
     func loadBills() {
-//        bills = Bill.mock
         codableData.decode(&bills)
-//        FileManager().readDoc(docName: fileName) { (result) in
-//            switch result {
-//            case .success(let data):
-//                let decoder = JSONDecoder()
-//                do {
-//                    bills = try decoder.decode([Bill].self, from: data)
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
     }
     func saveBills() {
-        print("Saving info.")
         codableData.enconde(bills)
-//        let encoder = JSONEncoder()
-//        do {
-//            let data = try encoder.encode(bills)
-//            let jsonString = String(decoding: data, as: UTF8.self)
-//            FileManager().saveDoc(contents: jsonString, docName: fileName) { (error) in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        } catch {
-//            print(error.localizedDescription)
-//        }
     }
 }

@@ -17,11 +17,9 @@
 		EE0A6CED28326AB400467364 /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CEC28326AB400467364 /* BillModel.swift */; };
 		EE0A6CEF28326CD500467364 /* BillVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CEE28326CD500467364 /* BillVM.swift */; };
 		EE0A6CF328326E1900467364 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CF228326E1900467364 /* DataManager.swift */; };
-		EE0A6CF72832815500467364 /* LabelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CF62832815500467364 /* LabelItemView.swift */; };
 		EE0A6CF92832895300467364 /* BillFormVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CF82832895300467364 /* BillFormVM.swift */; };
 		EE0A6CFB283289E800467364 /* BillFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CFA283289E800467364 /* BillFormView.swift */; };
 		EE0A6CFE2832BEA400467364 /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CFD2832BEA400467364 /* EnumModel.swift */; };
-		EE0A6D00283533E600467364 /* BillCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0A6CFF283533E600467364 /* BillCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +53,9 @@
 		EE0A6CEC28326AB400467364 /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
 		EE0A6CEE28326CD500467364 /* BillVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillVM.swift; sourceTree = "<group>"; };
 		EE0A6CF228326E1900467364 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		EE0A6CF62832815500467364 /* LabelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelItemView.swift; sourceTree = "<group>"; };
 		EE0A6CF82832895300467364 /* BillFormVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillFormVM.swift; sourceTree = "<group>"; };
 		EE0A6CFA283289E800467364 /* BillFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillFormView.swift; sourceTree = "<group>"; };
 		EE0A6CFD2832BEA400467364 /* EnumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
-		EE0A6CFF283533E600467364 /* BillCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,9 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				EE0A6CC028326A2200467364 /* ContentView.swift */,
-				EE0A6CF62832815500467364 /* LabelItemView.swift */,
 				EE0A6CFA283289E800467364 /* BillFormView.swift */,
-				EE0A6CFF283533E600467364 /* BillCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,8 +334,6 @@
 				EE0A6CED28326AB400467364 /* BillModel.swift in Sources */,
 				EE0A6CBF28326A2200467364 /* MyBillsApp.swift in Sources */,
 				EE0A6CFE2832BEA400467364 /* EnumModel.swift in Sources */,
-				EE0A6CF72832815500467364 /* LabelItemView.swift in Sources */,
-				EE0A6D00283533E600467364 /* BillCardView.swift in Sources */,
 				EE0A6CEF28326CD500467364 /* BillVM.swift in Sources */,
 				EE0A6CFB283289E800467364 /* BillFormView.swift in Sources */,
 			);

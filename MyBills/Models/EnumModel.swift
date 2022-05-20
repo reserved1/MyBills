@@ -13,9 +13,9 @@ enum OptionTypes: Identifiable {
     var id: String {
         switch self {
         case .new:
-            return "new"
+            return "salvar"
         case .update:
-            return "update"
+            return "atualizar"
         }
     }
 }

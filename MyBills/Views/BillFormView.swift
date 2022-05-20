@@ -59,22 +59,26 @@ struct BillFormView: View {
 }
 extension BillFormView {
     func addBill() {
-        let bill = Bill(barCode: bformVM.barCode, billDescription: bformVM.billDescription, status: bformVM.status, value: bformVM.value)
+        let bill = Bill(
+            barCode: bformVM.barCode, billDescription: bformVM.billDescription, status: bformVM.status, value: bformVM.value
+        )
         billVM.addBill(bill)
         presentationMode.wrappedValue.dismiss()
     }
     func updateBill() {
-        let bill = Bill(id: bformVM.id!, barCode: bformVM.barCode, billDescription: bformVM.billDescription, status: bformVM.status, value: bformVM.value)
+        let bill = Bill(
+            id: bformVM.id!, barCode: bformVM.barCode, billDescription: bformVM.billDescription, status: bformVM.status, value: bformVM.value
+        )
         billVM.updateBill(bill)
         presentationMode.wrappedValue.dismiss()
     }
     var cancelButton: some View {
-        Button("Cancel") {
+        Button("Cancelar") {
             presentationMode.wrappedValue.dismiss()
         }
     }
     var saveUpdateButton: some View {
-        Button( bformVM.update ? "Update" : "Save", action: bformVM.update ? updateBill : addBill)
+        Button( bformVM.update ? "Atualizar" : "Salvar", action: bformVM.update ? updateBill : addBill)
         .disabled(bformVM.isDisabled)
     }
 }
